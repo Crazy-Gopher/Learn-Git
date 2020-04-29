@@ -1,0 +1,164 @@
+https://git-scm.com/docs
+https://www.atlassian.com/git/tutorials/cherry-pick
+https://www.vogella.com/tutorials/Git/article.html#firstgit_repoadd
+
+ssh-keygen -t rsa -b 4096 -C "Kapil.Jain@gmail.com"
+    
+
+## git --version
+
+## git config
+git congfig --global user.name "Kapil Jain"
+git config --global user.email "Kapil.Jain@gmail.com"
+git config --list
+
+## git init      (Create an empty Git repository or reinitialize an existing one)
+git init .
+
+## git clone ( Clone a repository into a new directory )
+git clone git@github.com:kapjain/Learn-Go.git
+
+## git branch  (List, create, or delete branches)
+git branch branch_name
+git branch
+git branch -d branch_name
+git branch -D branch_name
+git branch -m old_branch new_branch (rename branch)
+
+## git checkout
+git checkout <files or directory>
+git checkout -- file
+git checkout branchname
+git checkout -b branchname
+
+git checkout -b new_branch origin/master
+
+git checkout <commit_id first 8 hexadecimal code> filename
+
+git checkout string_operations.c <undo changes or get a removed file> Note − We can perform all these operations before commit.
+
+git checkout HEAD -- string_operations.c
+
+## git switch    (Switch branches)
+
+## git status    (Show the working tree status)
+git status
+git status -s
+
+
+## git add  (Add file contents to the index)
+git add filename1 filename2
+git add directory
+git add .
+git add -A (Add all files to stage)
+git restore --staged filename (Remove from stage)
+
+
+## git diff      (Show changes between commits, commit and working tree, etc)
+git diff <optional filename>
+git diff <commit or branch> <commit or branch>
+git diff commit commit
+
+
+## git rm
+git rm files
+
+
+## git mv
+git mv files
+
+
+## git commit    (Record changes to the repository)
+git commit -m "Add some commit message"
+git commit -am "Add into stage and commit tracked file, for untracked files first you need to add"
+git commit -a -m "Add"
+
+
+## git show  (Show various types of objects)
+git show commit_id
+
+
+## git restore (Restore working tree files)
+git retore <filename>  to discard changes in working directory
+
+
+## git revert
+git revert <7a83id87 commit id>
+
+
+## git reset     Reset current HEAD to the specified state
+git reset --hard 577647211ed44fe2ae479427a0668a4f12ed71a1
+git reset --soft HEAD~
+git reset --hard remote/branch
+
+
+## git stash
+git stash save "Stash name"
+git stash list
+git stash apply stash@{0}
+git stash drop stash@{0}
+git stash clear
+git stash pop
+git stash show
+
+
+## git log       (Show commit logs)
+git log
+press q to quit
+git log --oneline
+git log -2
+
+
+## git tag  (Create, list, delete or verify a tag object signed with GPG)
+git tag -a 'Release_1_0' -m 'Tagged basic string operation code' HEAD
+git push origin tag Release_1_0
+git tag -l
+git show Release_1_0
+git tag -d Release_1_0
+git push origin :Release_1_0
+
+
+## git merge     (Join two or more development histories together)
+git merge <commit or branch>
+git merge origin/master
+git merge origin/wchar_support
+
+
+## git rebase    Reapply commits on top of another base tip
+git rebase upstream/master
+git rebase --abort
+git rebase --continue
+
+
+## git remote
+git remote add upstream git@github.com:kapjain/Learn-Go.git
+git remote add origin git@github.com:kapjain/Learn-Go
+
+
+## git pull  (Fetch from and integrate with another repository or a local branch)
+git pull = git fetch + git merge
+git pull upstream master
+git pull origin master
+
+
+## git push (Update remote refs along with associated objects)
+git push origin feature_branch
+git push origin master
+git push <remote> –force
+git push -f origin master
+
+
+## git fetch  (Download objects and refs from another repository)
+git fetch origin branchname
+
+
+## git cherry-pick
+git cherry-pick commit_id
+git cherry-pick --abort
+git cherry-pick --continue
+git cherry-pick --skip
+
+
+## git format-patch
+git format-patch -1
+git apply 0001-Added-my_strcat-function.patch
